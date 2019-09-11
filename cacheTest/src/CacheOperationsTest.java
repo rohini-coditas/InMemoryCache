@@ -19,7 +19,7 @@ public class CacheOperationsTest {
         cacheOperationService.add("TCS", new Company("TCS", 1000, "Service", "Tata"));
         cacheOperationService.add("Coditas", new Company("Cdoitas", 1000, "Service", "mitul bid"));
         cacheOperationService.add("IBM", new Company("IBM", 1000, "Service", "Tata"));
-        cacheOperationService.add("Tibco", new Company("IBM", 1000, "Service", "Tata"));
+        cacheOperationService.add("Tibco", new Company("Tibco", 1000, "Service", "Tata"));
 
     }
 
@@ -27,6 +27,7 @@ public class CacheOperationsTest {
     public void add() {
         cacheOperationService.add("Tieto", new Company("Tieto", 1000, "Service", "Tata"));
         assertNotEquals(null,cacheOperationService.get("Tieto"));
+        cacheOperationService.displayCacheData();
     }
 
     @Test
@@ -76,25 +77,6 @@ public class CacheOperationsTest {
         assertEquals(((Company)oldObject).getType(),((Company)updatedObjectWithValues).getType());
     }
 
-    @Test
-    public void storeUpdatedDataInCache(){
 
-        Object oldObject = cacheOperationService.get("TCS");
-        Object updatedObjectWithTime =  cacheOperationService.get("TCS");
-
-        assertEquals(((Company)oldObject).getName(),((Company)updatedObjectWithTime).getName());
-        assertEquals(((Company)oldObject).getFounder(),((Company)updatedObjectWithTime).getFounder());
-        assertEquals(((Company)oldObject).getNoOfEmployees(),((Company)updatedObjectWithTime).getNoOfEmployees());
-        assertEquals(((Company)oldObject).getType(),((Company)updatedObjectWithTime).getType());
-
-
-        cacheOperationService.add("6sense", new Company("6sense", 1000, "Service", "Tata"));
-        Object updatedObjectWithValues = cacheOperationService.get("6sense");
-
-        assertEquals(((Company)oldObject).getName(),((Company)updatedObjectWithTime).getName());
-        assertEquals(((Company)oldObject).getFounder(),((Company)updatedObjectWithTime).getFounder());
-        assertEquals(((Company)oldObject).getNoOfEmployees(),((Company)updatedObjectWithTime).getNoOfEmployees());
-        assertEquals(((Company)oldObject).getType(),((Company)updatedObjectWithTime).getType());
-    }
 
 }
