@@ -3,6 +3,11 @@
  */
 public class Company {
 
+    String name;
+    Integer noOfEmployees;
+    String type;
+    String founder;
+
     public Company(String name,Integer noOfEmployees,String type,String founder){
         this.name=name;
         this.noOfEmployees=noOfEmployees;
@@ -16,16 +21,6 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Company{" +
-                "name='" + name + '\'' +
-                ", noOfEmployees=" + noOfEmployees +
-                ", type='" + type + '\'' +
-                ", founder='" + founder + '\'' +
-                '}';
     }
 
     public Integer getNoOfEmployees() {
@@ -52,9 +47,14 @@ public class Company {
         this.founder = founder;
     }
 
-    String name;
-    Integer noOfEmployees;
-    String type;
-    String founder;
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", noOfEmployees=" + noOfEmployees +
+                ", type='" + type + '\'' +
+                ", founder='" + founder + '\'' +
+                '}';
+    }
 
 }
