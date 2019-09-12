@@ -2,7 +2,6 @@
  * Created by rohini on 10/9/19.
  */
 
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,16 +15,16 @@ public class CacheOperationsTest {
     public void instantiateMapWithData()  {
         cacheOperationService = new CacheOperations();
         cacheOperationService.add("Infosys", new Company("Infosys", 1000, "Service", "Sudha Murthi"));
-        cacheOperationService.add("TCS", new Company("TCS", 1000, "Service", "Tata"));
-        cacheOperationService.add("Coditas", new Company("Cdoitas", 1000, "Service", "mitul bid"));
-        cacheOperationService.add("IBM", new Company("IBM", 1000, "Service", "Tata"));
-        cacheOperationService.add("Tibco", new Company("Tibco", 1000, "Service", "Tata"));
+        cacheOperationService.add("TCS", new Company("TCS", 10000, "Service", "Tata"));
+        cacheOperationService.add("Coditas", new Company("Coditas", 1000, "Service", "mitul bid"));
+        cacheOperationService.add("IBM", new Company("IBM", 1000, "Service", "Charles Ranlett Flint"));
+        cacheOperationService.add("Tibco", new Company("Tibco", 1000, "Product", " Dale Skeen"));
 
     }
 
     @Test
     public void add() {
-        cacheOperationService.add("Tieto", new Company("Tieto", 1000, "Service", "Tata"));
+        cacheOperationService.add("Tieto", new Company("Tieto", 1000, "Service", "M.H. Hasham Premji"));
         assertNotEquals(null,cacheOperationService.get("Tieto"));
         cacheOperationService.displayCacheData();
     }
@@ -33,7 +32,7 @@ public class CacheOperationsTest {
     @Test
     public void addToCacheOnSizeExeceed() {
         long cacheSize=cacheOperationService.size();
-        cacheOperationService.add("Tieto", new Company("Tieto", 1000, "Service", "Tata"));
+        cacheOperationService.add("Tieto", new Company("Tieto", 1000, "Service", "M.H. Hasham Premji"));
         assertEquals(cacheSize,cacheOperationService.size());
         assertNotEquals(null,cacheOperationService.get("Tieto"));
     }
@@ -66,7 +65,7 @@ public class CacheOperationsTest {
         assertEquals(((Company)oldObject).getType(),((Company)updatedObjectWithTime).getType());
 
 
-        cacheOperationService.add("6sense", new Company("6sense", 1000, "Service", "Tata"));
+        cacheOperationService.add("6sense", new Company("6sense", 1000, "Product", "Amanda Kahlow"));
         oldObject = cacheOperationService.get("6sense");
 
         Object updatedObjectWithValues = cacheOperationService.get("6sense");
