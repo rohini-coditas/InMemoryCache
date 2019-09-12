@@ -1,4 +1,4 @@
-class SimpleCache {
+class TestCache {
 
 
     public static void main(String args[]) throws Exception {

@@ -11,6 +11,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$USER_HOME$/Tavisca1/InMemoryCache/pom.xml" />
         <option value="$USER_HOME$/Tavisca1/pom.xml" />
       </set>
     </option>
